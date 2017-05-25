@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1">
+    <title>MyBlog</title>
+    <link rel="stylesheet" href="/public/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/public/css/main.css"/>
+    <script src="/public/js/jquery-3.0.0.js"></script>
+    <script src="/public/js/index.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row" style="background-color: white;">
+        <div class="logo">
+            <img src="/public/image/logo.png" alt=""/>
+        </div>
+        <ul class="list-inline title">
+            {%if category==""%}
+            <li class="title-li li-hover"><a href="/" style="color: orange">首页</a></li>
+            {%else%}
+            <li class="title-li"><a href="/" style="color: orange">首页</a></li>
+            {%endif%}
+            {%for cate in categories%}
+            {%if category==cate.id%}
+            <li class="title-li li-hover"><a href="/?category={{cate.id}}">{{cate.name}}</a></li>
+            {%else%}
+            <li class="title-li"><a href="/?category={{cate.id}}">{{cate.name}}</a></li>
+            {%endif%}
+            {%endfor%}
+        </ul>
+    </div>
+    <div class="row ">
+        <img class="bg-image" src="/public/image/181Z332-1-154358.jpg" alt=""/>
+    </div>
+    <div class="row center-block main">
+        <div class="col-lg-7 col-md-7  col-xs-7 content-left ">
+          {%block content%}
+            {%endblock%}
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-5   content-right">
+            <div class="row right-1">
+                {% if !userInfo._id %}
+                <!--登录注册-->
+                <div class="deng">
+                    <div class="deng-top">登录</div>
+                    <div class="username">
+                        <label for="">用户名：</label>
+                        <input  style="width: 70%" type="text" id="username-deng"/>
+                    </div>
+                    <div class="password">
+                        <label for="">密码：</label>
+                        <input style="width: 70%" type="password" id="password-deng"/>
+                    </div>
+                    <button class="btn enter">登录</button>
+                    <p class="sgin"></p>
+                    <p>还没注册？<a href="javascript:;" class="colMint1">马上注册</a></p>
+                </div>
+                <div class="zhuce"  style="display: none">
+                    <div class="zhuce-top">注册</div>
+                    <div class="username">
+                        <label for="">用户名：</label>
+                        <input style="width: 70%" type="text" id="username"/>
+                    </div>
+                    <div class="password">
+                        <label for="">密码：</label>
+                        <input style="width: 70%" type="password" id="password"/>
+                    </div>
+                    <div class="password">
+                        <label for="">确认：</label>
+                        <input style="width: 70%" type="password" id="repassword"/>
+                    </div>
+                    <button class="btn register">注册</button>
+                    <p class="sgin"></p>
+                    <p>已有账号？<a href="javascript:;" class="colMint2">马上登录</a></p>
+                </div>
+                {%else%}
+                <!--用户信息-->
+                <div class="administrator">
+                    <div class="zhuce-top">用户信息</div>
+                    <p class="admin">{{userInfo.username}}</p>
+                    {% if userInfo.isAdmin %}
+                    <p class="text-1">你好，你是管理员！<a href="/admin">点击进入后台管理页面</a></p>
+                    {%else%}
+                    <p class="text-1">您好，欢迎光临我的博客！</p>
+                    {%endif%}
+                    <p class="btn-out"><a href="javascript:;" id="logout">退出</a></p>
+                </div>
+                {%endif%}
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

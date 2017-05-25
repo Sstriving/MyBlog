@@ -1,0 +1,9 @@
+ <!--模板的继承-->
+{%extends 'layout.html'%}
+ <!--重载那个空的块元素-->
+ {%block main%}
+ <div class="jumbotron">
+     <h1>Hello, {{userInfo.username}}!</h1>
+     <p>欢迎来到后台管理页面</p>
+ </div>
+ {%endblock%}

@@ -1,0 +1,13 @@
+<!--分页模块-->
+<nav aria-label="...">
+    <ul class="pager">
+        <li class="previous"><a href="/admin{{url}}?page={{page-1}}"><span aria-hidden="true">&larr;</span> 上一页</a></li>
+        <li>
+            <span>数据量&nbsp;{{count}}</span>
+            <span>每页显示&nbsp;{{limit}}&nbsp;条</span>
+            <span>当前为第&nbsp;{{page}}&nbsp;页</span>
+            <span>总页数&nbsp;{{pages}}</span>
+        </li>
+        <li class="next"><a href="/admin{{url}}?page={{page+1}}">下一页<span aria-hidden="true">&rarr;</span></a></li>
+    </ul>
+</nav>

@@ -1,0 +1,59 @@
+{%extends 'layout.html'%}
+{%block content%}
+<div class="row left-1">
+    <h3>{{contents.title}}</h3>
+    <p>作者：{{contents.user.username}} -时间：{{contents.addTime|date('Y-m-d H:i:s',-8*60)}} -阅读：{{contents.views}} -评论:{{contents.comments.length}}</p>
+    <p class="content" style="text-indent: 2em">{{contents.content}}</p>
+</div>
+<div class="row comment">
+    <ol class="breadcrumb">
+        <li><a href="#">查看评论</a></li>
+        <span id="commentNum" style="font-size: 12px;float: right"></span>
+    </ol>
+    <ul class="list-unstyled" id="commentNow" style="padding: 0 10px">
+        <!--<li>-->
+            <!--<p><span>text1</span><span style="float: right">2017-7-29 17:24:01</span></p>-->
+            <!--<p style="line-height: 5px">内容</p>-->
+        <!--</li>-->
+        <!--<li style="margin-top: 20px">-->
+            <!--<p><span>text1</span><span style="float: right">2017-7-29 17:24:01</span></p>-->
+            <!--<p style="line-height: 5px">内容</p>-->
+        <!--</li>-->
+        <!--<li style="margin-top: 20px">-->
+            <!--<p><span>text1</span><span style="float: right">2017-7-29 17:24:01</span></p>-->
+            <!--<p style="line-height: 5px">内容</p>-->
+        <!--</li>-->
+    </ul>
+    <div class="row page-comment">
+        <ul class="list-unstyled list-inline ">
+            <li class="pull-left pageUp">
+                <a href="">上一页</a>
+            </li>
+            <li>
+                <!--<strong>此分类下没有内容</strong>-->
+                <!--<strong>{{page}}/{{pages}}</strong>-->
+            </li>
+            <li class="pull-right pageDown">
+                <a href="">下一页</a>
+            </li>
+        </ul>
+    </div>
+    {%if userInfo._id %}
+    <ol class="breadcrumb" style="margin-top: 20px">
+        <li><a href="#">发表评论</a></li>
+    </ol>
+    <div class="comment-content" style="padding: 0 10px">
+        <p><span>用户名:</span><span>{{userInfo.username}}</span></p>
+        <input type="text" class="hidden" id="contentid" value="{{contents.id}}"/>
+        <textarea name="text" id="text"  rows="5" class="form-control"></textarea>
+        <p class="message"></p>
+        <button class="btn  btn-primary" id="comment" style="margin-top: 10px;float: right">提交</button>
+    </div>
+    {%else%}
+    <ol class="breadcrumb">
+        <li>您还没有登录，请 <a href="" style="color: red">登录</a>或 <a href="" style="color: red">注册</a></li>
+    </ol>
+    {%endif%}
+</div>
+<script src="/public/js/comment.js"></script>
+{%endblock%}

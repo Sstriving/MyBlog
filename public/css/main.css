@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgba(192, 192, 192, 0.67)
+}
+.bg-image{
+    width: 100%;
+    height: 260px;
+}
+.logo {
+    width: 20%;
+    float: left;
+    /*border: 1px solid silver;*/
+    margin: 0 auto;
+    text-align: center;
+}
+.logo img{
+    width: 100px;
+    /*border: 1px solid silver;*/
+}
+.title{
+    line-height: 35px;
+    margin: 0 auto;
+    width: 60%;
+    text-align: center;
+    cursor: pointer;
+    float: right;
+    padding: 20px 0;
+    font-size: 1.2em;
+    /*border: 1px solid silver;*/
+
+}
+.title-li{
+    /*font-size: 0.8em;*/
+    margin: 0 10px;
+    display: inline-block;
+    border-bottom: 2px solid white;
+
+    /*border: 1px solid silver;*/
+}
+.title-li a{
+    text-decoration: none;
+    color: black;
+}
+.li-hover,.li-hover1{
+    border-bottom: 2px solid #f39900;
+}
+
+.left-1:nth-child(1){
+    margin-top: 0;
+}
+.left-1{
+    width: 100%;
+    height: auto;
+    padding: 20px 0;
+    text-align: center;
+    background-color: white;
+    margin-top: 10px;
+}
+.comment{
+    width: 100%;
+    height: auto;
+    text-align: left;
+    margin-top: 20px;
+    background-color: white;
+}
+.content{
+    width: 87%;
+    font-size: 1.2em;
+    /*border: 1px solid silver;*/
+    margin: 10px auto;
+    text-align: left;
+}
+.comment{
+    padding: 20px;
+}
+.main{
+    width: 1180px;
+    height: auto;
+    /*border: 1px solid silver;*/
+}
+.content-left{
+    margin-top: 30px;
+    margin-left: 5%;
+    height: auto;
+    overflow: hidden;
+    text-align: right;
+    /*border: 1px solid silver;*/
+}
+.content-right{
+    margin-top: 30px;
+    margin-left: 2%;
+    height: auto;
+    overflow: hidden;
+    /*border: 1px solid red;*/
+}
+.right-1{
+    background-color: white;
+    width: 100%;
+}
+.deng, .zhuce,.administrator {
+    /*border: 1px solid silver;*/
+    width: 90%;
+    text-align: right;
+}
+.zhuce-top,.deng-top{
+    /*width: 20%;*/
+    border-bottom: 2px solid orange;
+    text-align: left;
+    margin-left: 20px;
+    font-size: 1.5em;
+    padding: 5px 0;
+}
+.admin{
+    text-align: left;
+    margin-left: 20px;
+    padding: 5px 0;
+    font-size: 1.5em;
+    /*border: 1px solid silver;*/
+}
+.text-1{
+    color: #dd0000;
+    text-align: left;
+    margin-left: 20px;
+}
+.btn-out{
+    text-align: left;
+    margin-left: 20px;
+}
+.username, .password {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    /*border: 1px solid silver;*/
+}
+
+.register,.enter{
+    width: 70%;
+    margin-top: 20px;
+    line-height: 20px;
+    text-align: center;
+    background-color: #ffa322;
+    color: white;
+}
+
+.sgin {
+    font-size: 14px;
+    margin-top: 10px;
+    color: orange;
+}
+.btn-read{
+    background-color: orange;
+    color: white;
+    float: left;
+    margin-left: 30px;
+}
+.btn-read:hover{
+    background-color: rgba(255, 165, 0, 0.86);
+    color: white;
+    text-decoration: none;
+}
+.page,.page-comment{
+    background-color: white;
+    margin-top: 20px;
+    text-align: center;
+    line-height: 40px;
+    width: 100%;
+    height: 40px;
+    padding: 0 20px;
+}
+.page-comment{
+    margin: 0 auto;
+}
+.content-com{
+    line-height: 10px;
+}
+.comment-username{
+    color: #3342e3;
+}
+.message{
+    color: red;
+}
+.li-comment{
+    margin-bottom: 20px;
+    border-bottom: 1px dotted silver;
+}
+.postTime{
+    float: right;
+}
+@media all and (max-width: 1200px) and (min-width: 992px){
+    .main{
+        width: 900px;
+    }
+}
+@media all and (max-width: 992px) and (min-width: 768px){
+    .title{
+        width: 70%;
+    }
+    .main{
+        width: 768px;
+    }
+    .content-left{
+        margin-left: 0;
+    }
+    .content-right{
+        margin-left: 0;
+    }
+}
+@media all and (max-width: 768px){
+    .title{
+        width: 80%;
+    }
+    .main{
+        width: 100%;
+    }
+    .content-left{
+        font-size: 1vw;
+    }
+    .content-left{
+        margin-left: 0;
+    }
+    .content-right{
+        margin-left: 0;
+    }
+}
